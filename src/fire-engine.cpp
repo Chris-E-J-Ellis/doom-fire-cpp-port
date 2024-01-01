@@ -20,7 +20,7 @@ FireEngine::~FireEngine()
     _buffer.data = nullptr;
 }
 
-void FireEngine::InitBuffer(uint8_t ignition_value) const
+void FireEngine::Init(uint8_t ignition_value) const
 {
     srand(time(nullptr));
 

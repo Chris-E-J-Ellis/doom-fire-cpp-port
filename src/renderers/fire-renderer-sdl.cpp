@@ -4,7 +4,7 @@
 
 using namespace doom_fire::renderers;
 
-FireRendererSDL::FireRendererSDL(const doom_fire_palette_t &palette)
+FireRendererSDL::FireRendererSDL(const FirePalette &palette)
     : _window(nullptr),
       _renderer(nullptr),
       _window_surface(nullptr),
@@ -83,7 +83,7 @@ void FireRendererSDL::DrawBuffer(const FireBuffer &buffer)
     SDL_UpdateWindowSurface(_window);
 }
 
-uint8_t FireRendererSDL::GetMaxIgnitionValue()
+uint8_t FireRendererSDL::GetMaxIgnitionValue() const
 {
     return _fire_palette.size - 1;
 }
@@ -120,7 +120,7 @@ bool FireRendererSDL::ProcessAdditionalArgs(int argc, char **argv)
     return true;
 }
 
-void FireRendererSDL::Wait()
+void FireRendererSDL::Wait() const
 {
     usleep(1000);
 }

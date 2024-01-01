@@ -9,15 +9,15 @@ namespace doom_fire::renderers
     class FireRendererSDL final : public IFireRenderer
     {
     public:
-        explicit FireRendererSDL(const doom_fire_palette_t &palette);
+        explicit FireRendererSDL(const FirePalette &palette);
         ~FireRendererSDL() override = default;
         bool Init(const FireBuffer &buffer) override;
         void DeInit() override;
         void DrawBuffer(const FireBuffer &buffer) override;
         bool IsExitRequested() override;
         bool ProcessAdditionalArgs(int argc, char **argv) override;
-        uint8_t GetMaxIgnitionValue() override;
-        void Wait() override;
+        uint8_t GetMaxIgnitionValue() const override;
+        void Wait() const override;
 
     private:
         SDL_Window *_window;
@@ -25,6 +25,6 @@ namespace doom_fire::renderers
         SDL_Surface *_window_surface;
         SDL_Surface *_buffer_surface;
         SDL_Rect _render_rect;
-        const doom_fire_palette_t &_fire_palette;
+        const FirePalette &_fire_palette;
     };
 }

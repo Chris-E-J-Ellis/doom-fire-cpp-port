@@ -6,8 +6,3 @@ Largely just a simple C++ port of another small C project for some experimentati
 
 ## Requirements
 - [SDL2](https://www.libsdl.org/) development libraries and headers should be extracted to `./libs/SDL2` folder
-
-## TODO
-- const some stuff?
-- Split buffer class 
-- Cleanup palette class

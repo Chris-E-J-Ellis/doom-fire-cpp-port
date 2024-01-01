@@ -14,7 +14,7 @@ namespace doom_fire::renderers
         void DrawBuffer(const FireBuffer &buffer) override;
         bool IsExitRequested() override;
         bool ProcessAdditionalArgs(int argc, char **argv) override;
-        uint8_t GetMaxIgnitionValue() override;
-        void Wait() override;
+        uint8_t GetMaxIgnitionValue() const override;
+        void Wait() const override;
     };
 }

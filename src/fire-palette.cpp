@@ -44,14 +44,12 @@ namespace
         0xEF, 0xEF, 0xC7,
         0xFF, 0xFF, 0xFF
     };
-
-constexpr const doom_fire_palette_t palette =
-{
-    .rgb_data = palette_doom_rgb_values,
-    .size = sizeof(palette_doom_rgb_values) / sizeof(uint8_t) / 3};
 }
 
-const doom_fire_palette_t &FirePalette::Get()
+const FirePalette &FirePalette::Get()
 {
+    constexpr static FirePalette palette{
+            .rgb_data = palette_doom_rgb_values,
+            .size = sizeof(palette_doom_rgb_values) / sizeof(uint8_t) / 3};
     return palette;
 }

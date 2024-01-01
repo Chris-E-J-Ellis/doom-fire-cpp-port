@@ -17,7 +17,7 @@ namespace doom_fire
         explicit FireEngine(uint16_t width, uint16_t height);
         ~FireEngine();
 
-        void InitBuffer(uint8_t ignition_value) const;
+        void Init(uint8_t ignition_value) const;
         void StepFire() const;
         const FireBuffer &GetBuffer() const;
 

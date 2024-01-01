@@ -36,9 +36,9 @@ int main(int argc, char **argv)
     const uint16_t height = !use_default_args ? strtol(argv[2], nullptr, 10) : DefaultHeight;
     const uint16_t width = !use_default_args ? strtol(argv[1], nullptr, 10) : DefaultWidth;
 
-    const doom_fire_palette_t palette = FirePalette::Get();
-    FireRendererText textRenderer = FireRendererText();
+    const auto palette = FirePalette::Get();
     FireRendererSDL sdlRenderer = FireRendererSDL(palette);
+    FireRendererText textRenderer = FireRendererText();
     IFireRenderer &renderer = sdlRenderer;
 
     if (!renderer.ProcessAdditionalArgs(argc - DefaultArgCount, &argv[DefaultArgCount]))
@@ -48,10 +48,10 @@ int main(int argc, char **argv)
     }
 
     const int ignition_value = renderer.GetMaxIgnitionValue();
-    FireEngine fire_engine{width, height};
-    fire_engine.InitBuffer(ignition_value);
+    const FireEngine fire_engine{width, height};
+    fire_engine.Init(ignition_value);
 
-    int init_success = renderer.Init(fire_engine.GetBuffer());
+    const bool init_success = renderer.Init(fire_engine.GetBuffer());
     if (!init_success)
         return 1;
 

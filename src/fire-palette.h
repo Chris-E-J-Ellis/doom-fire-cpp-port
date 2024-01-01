@@ -4,15 +4,12 @@
 
 namespace doom_fire
 {
-    typedef struct
-    {
-        const uint8_t *rgb_data;
-        size_t size;
-    } doom_fire_palette_t;
-
     class FirePalette final
     {
     public:
-        static const doom_fire_palette_t &Get();
+        static const FirePalette &Get();
+
+        const uint8_t * const rgb_data;
+        const size_t size;
     };
 }

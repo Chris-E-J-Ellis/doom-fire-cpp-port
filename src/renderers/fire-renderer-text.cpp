@@ -36,7 +36,7 @@ void FireRendererText::DrawBuffer(const FireBuffer &buffer)
     printf("\n");
 }
 
-uint8_t FireRendererText::GetMaxIgnitionValue()
+uint8_t FireRendererText::GetMaxIgnitionValue() const
 {
     return sizeof(TextPalette) - 1;
 }
@@ -56,7 +56,7 @@ bool FireRendererText::ProcessAdditionalArgs(int argc, char **argv)
     return true;
 }
 
-void FireRendererText::Wait()
+void FireRendererText::Wait() const
 {
     usleep(1000000);
 }
